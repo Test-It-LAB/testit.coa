@@ -19,7 +19,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="testit.coa"
+      title="TEST COA"
       directory="profiles/default"
       description="Installs the testit.coa add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -41,5 +41,28 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+  <!-- View for Single Reports -->
+  <adapter
+      for="zope.interface.Interface
+           testit.coa.interfaces.ITestitCoaLayer"
+      name="AnalysisRequest"
+      factory=".reportview.SingleReportView"
+      provides="senaite.impress.interfaces.IReportView"
+      permission="zope2.View"/>
+
+  <!-- View for Multi Reports -->
+  <adapter
+      for="zope.interface.Interface
+           testit.coa.interfaces.ITestitCoaLayer"
+      name="AnalysisRequest"
+      factory=".reportview.MultiReportView"
+      provides="senaite.impress.interfaces.IMultiReportView"
+      permission="zope2.View"/>
+
+
+  <!-- Report resource directory -->
+  <plone:static
+      directory="reports"
+      type="senaite.impress.reports"/>
 
 </configure>

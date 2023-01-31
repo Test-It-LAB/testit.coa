@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the testit.coa package."""
+"""Installer for the TEST.COA package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -13,7 +13,7 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='testit.coa',
+    name='TESTIT.COA',
     version='1.0a1',
     description="ISO-17025 COA Templates",
     long_description=long_description,
